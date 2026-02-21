@@ -1,14 +1,15 @@
-post-pve-smart-standby.sh:
+# Proxmox HDD Spin-Down (SMART + LVM Fix)
+
+## Problem
+Opening the Proxmox **Disks** tab or use api with smart will wake sleeping HDDs because LVM (`lvs/pvs`) scans all devices or smartchecks.
+
+## Fix Smart
+Patch: post-pve-smart-standby.sh:
 
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/chackl1990/chackl-proxmox-helpers/refs/heads/main/post-pve-smart-standby.sh)"
 ```
-# Proxmox HDD Spin-Down (LVM Fix)
-
-## Problem
-Opening the Proxmox **Disks** tab can wake sleeping HDDs because LVM (`lvs/pvs`) scans all devices.
-
-## Fix
+## Fix LVM
 Exclude the media HDD from LVM scans using `global_filter`.
 
 Edit:

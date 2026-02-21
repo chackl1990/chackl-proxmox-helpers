@@ -24,8 +24,9 @@ devices {
     global_filter = [
         "r|/dev/zd.*|",
         "r|/dev/rbd.*|",
-        "r|/dev/disk/by-id/ata-YOUR_MEDIA_HDD_ID|",
-        "a|.*|"
+        "r|/dev/disk/by-id/ata-YOUR_MEDIA_HDD_ID1|",
+        "r|/dev/disk/by-id/ata-YOUR_MEDIA_HDD_ID2|",
+        ...
     ]
 }
 ```
